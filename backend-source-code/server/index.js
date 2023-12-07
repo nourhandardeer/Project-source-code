@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const User = require('./modules/userModule');
 const Product = require('./modules/productModule');
 const Order = require('./modules/orderModule');
+const Category = require('./modules/categoryModule');
 const productsRouter = require('./routers/products');
 const bcrypt = require('bcrypt');
 const index = express();
