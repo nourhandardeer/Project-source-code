@@ -1,78 +1,61 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const orderSchema = new Schema({
-    user: {
+const orderSchema = mongoose.Schema({
+    orderItems: [{
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: "User"
-    },
-    orderItems: [
-        {
-            name: { type: String, required: true },
-            qty: { type: Number, required: true },
-            image: { type: String, required: true },
-            price: { type: Number, required: true },
-            product: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                ref: "Product"
-            },
-        },
-    ],
-    shippingAddress: {
-        address: { type: String, required: true },
-        city: { type: String, required: true },
-        postalCode: { type: String, required: true },
-        country: { type: String, required: true },
-    },
-    paymentMethod: {
+        ref: 'OrderItem',
+        required:true
+    }],
+    shippingAddress1: {
         type: String,
         required: true,
-        default: "paypal"
     },
-    paymentResult: {
-        id: { type: String },
-        status: { type: String },
-        update_time: { type: String },
-        email_address: { type: String },
+    shippingAddress2: {
+        type: String,
     },
-    taxPrice: {
-        type: Number,
+    city: {
+        type: String,
         required: true,
-        default: 0.0
     },
-    shippingPrice: {
-        type: Number,
+    zip: {
+        type: String,
         required: true,
-        default: 0.0
+    },
+    country: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    },
+    status: {
+        type: String,
+        required: true,
+        default: 'Pending',
     },
     totalPrice: {
         type: Number,
-        required: true,
-        default: 0.0
     },
-    isPaid: {
-        type: Boolean,
-        required: true,
-        default: false
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
     },
-    paidAt: {
-        type: Date // Corrected 'data' to 'Date'
+    dateOrdered: {
+        type: Date,
+        default: Date.now,
     },
-    isDelivered: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
-    deliveredAt: {
-        type: Date // Corrected 'data' to 'Date'
-    }
-},
-{
-    timestamps: true
+})
+
+orderSchema.virtual('id').get(function () {
+    return this._id.toHexString();
 });
 
-const Order = mongoose.model("Order", orderSchema);
-module.exports = Order;
+orderSchema.set('toJSON', {
+    virtuals: true,
+});
+
+exports.Order = mongoose.model('Order', orderSchema);
+
 
