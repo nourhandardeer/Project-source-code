@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require('mongoose');
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
-const ordersRoutes = require('./routers/orders');
 const bcrypt = require('bcrypt');
 require('dotenv/config');
 const app = express();
@@ -11,14 +10,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 //routers
-app.use('${api}/products', productsRouter)
-<<<<<<< HEAD
+app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
-=======
-app.use('${api}/users', usersRoutes)
-app.use('${api}/orders', ordersRoutes)
-/* const { notFound, errorHandler } = require("../backend-source-code/Errors");
->>>>>>> a1ebeb8e1fb21f18bb977d996f9eeff618df11bf
 
 mongoose.set("strictQuery", false)
 mongoose
