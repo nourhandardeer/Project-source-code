@@ -34,7 +34,7 @@ const productSchema= mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         required:true
-    },
+     },
     countInStock: {
         type: Number,
         required: true,
@@ -43,10 +43,6 @@ const productSchema= mongoose.Schema({
     isFeatured: {
         type: Boolean,
         default: false,
-    },
-    dateCreated: {
-        type: Date,
-        default: Date.now,
     }
 },
 {
