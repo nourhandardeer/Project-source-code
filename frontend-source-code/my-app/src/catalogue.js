@@ -1,18 +1,31 @@
 import React from 'react';
-import phot1 from './phot1.jpg'
+import necklaces from './images/necklaces.png';
+import bracelet from './images/bracelet.png';
+import earrings from './images/earrings.png';
+import rings from './images/rings.jpg';
+
 function catalogue(){
     return(
         <div className='cata'>
             <div className='catalogue1'>
-                <button>
-                    <img src='./phot1.jpg' alt=' '/>show all
+                
+                <a href="/">
+                    <img src={necklaces}></img>
+                    Nicklaces
+                </a>
+                <a href="/">
+                    <img src={rings}></img>
+                    Rings
+                </a>
+                <a href="/">
+                <img src={bracelet}></img>
 
-                </button>
-                {/* <a href="/">show all</a> */}
-                <a href="/">Ring</a>
-                <a href="/">Necklace</a>
-                <a href="/">Bracelet</a>
-                <a href="/">Earring</a>
+                    Bracelets
+                </a>
+                <a href="/">
+                    <img  src={earrings}></img>
+                    Earring
+                </a>
             </div>
             <div>
                 <img src="" alt="" />
@@ -25,7 +38,7 @@ function catalogue(){
                 <img src="" alt="" /><p></p>
             </div>
             <div className='but'>
-                <p>Whant to see the more catalogue?</p>
+                <p>Want to see the more catalogue?</p>
                 <button>See more</button>
             </div>
         </div>

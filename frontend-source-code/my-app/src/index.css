@@ -116,3 +116,32 @@ img:hover{
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 
 }
+/* bestSellers.css */
+
+/* Style for the container div */
+.best-sellers {
+  text-align: center; /* Center align text */
+}
+
+/* Style for the heading */
+.best-sellers h1 {
+  font-size: 24px;
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+/* Style for the anchor tags */
+.best-sellers a {
+  display: inline-block; /* Display links in a row */
+  margin: 0 10px; /* Add space around the links */
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Link color */
+}
+
+/* Style for the images */
+.best-sellers img {
+  width: 200px; /* Set width for the images */
+  height: auto; /* Maintain aspect ratio */
+  border: 1px solid #ddd; /* Add a border for visual separation */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+}
+

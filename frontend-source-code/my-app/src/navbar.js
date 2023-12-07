@@ -1,9 +1,11 @@
 //import { Router } from 'express';
 import { Link } from 'react-router-dom';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
 
 
 const Navbar = () => {
+
     return ( 
       <nav className="navbar" >
           <div className="links">
@@ -19,7 +21,12 @@ const Navbar = () => {
           <a herf="/SignUp ">Sign Up</a>
           <a herf="/profile">ME</a>
 
-
+        </div>
+   
+        <div className='cart'>
+       <a herf='/cart'>
+        <ShoppingCartTwoToneIcon></ShoppingCartTwoToneIcon>
+       </a>
         </div>
       </nav>
  
