@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require('mongoose');
- /*const User = require('./modules/userModule');
+ const User = require('./modules/userModule');
 const Product = require('./modules/productModule');
-const Order = require('./modules/orderModule'); */
+const Order = require('./modules/orderModule'); 
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/orders');
+const categoriesRoutes = require ('./routers/categories')
 const bcrypt = require('bcrypt');
 //const index = express();
 const app = express()
@@ -21,6 +22,7 @@ const api = process.env.API_URL;
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
+app.use('/categories', categoriesRoutes)
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");
 
 
