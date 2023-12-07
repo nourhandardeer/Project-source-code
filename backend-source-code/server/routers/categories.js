@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const category = new Category({
+    let category = new Category({
         name: req.body.name,
         image: req.body.image
     })
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id',async (req, res)=> {
-    const category = await Category.findByIdAndUpdate(
+    let category = await Category.findByIdAndUpdate(
         req.params.id,
         {
             name: req.body.name,

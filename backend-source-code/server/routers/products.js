@@ -57,11 +57,11 @@ router.get(`/get/featured`, async (req, res) => {
 
 router.post('/', async (req, res) => {
     const category = await Category.findById(req.body.category)
-    if (!category) {
+    if (!category) 
         return res.status(400).send('Invalid category')
-    }
+    
 
-    const product = new Product({
+    let product = new Product({
         name: req.body.name,
         image: req.body.image,
         description: req.body.description,
