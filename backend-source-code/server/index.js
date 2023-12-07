@@ -5,6 +5,7 @@ const Product = require('./modules/productModule');
 const Order = require('./modules/orderModule'); */
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
+const ordersRoutes = require('./routers/orders');
 const bcrypt = require('bcrypt');
 const index = express();
 const app = express()
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }))
 //routers
 app.use('${api}/products', productsRouter)
 app.use('${api}/users', usersRoutes)
+app.use('${api}/orders', ordersRoutes)
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");
 
 
