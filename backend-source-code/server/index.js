@@ -1,19 +1,23 @@
 const express = require("express");
 const mongoose = require('mongoose');
-/* const User = require('./modules/userModule');
+ /*const User = require('./modules/userModule');
 const Product = require('./modules/productModule');
 const Order = require('./modules/orderModule'); */
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/orders');
 const bcrypt = require('bcrypt');
-const index = express();
+//const index = express();
 const app = express()
-const api = process.env.API_URL;
+require('dotenv/config');
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 //routers
+const api = process.env.API_URL;
+
 app.use('${api}/products', productsRouter)
 app.use('${api}/users', usersRoutes)
 app.use('${api}/orders', ordersRoutes)
