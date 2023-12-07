@@ -1,14 +1,19 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const User = require('./modules/userModule')
-const Product = require('./modules/productModule')
-const Order = require('./modules/orderModule')
+const User = require('./modules/userModule');
+const Product = require('./modules/productModule');
+const Order = require('./modules/orderModule');
+const productsRouter = require('./routers/products');
 const bcrypt = require('bcrypt');
 const index = express();
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
+
+//routers
+app.use('/routers/products', productsRouter)
+
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");
 
 
@@ -33,11 +38,11 @@ index.use(errorHandler);
 }); */
 mongoose.set("strictQuery", false)
 mongoose
-.connect('mongodb://127.0.0.1:27017/projectData')
-.then(() => {
-    console.log('connected to MongoDB')
-    //listen on specific port 
-    app.listen(5000, () => console.log('app started on port 5000'))
-}).catch((error) => {
-    console.log('cant connect to mongodb'+error)
-})
+    .connect('mongodb://127.0.0.1:27017/projectData')
+    .then(() => {
+        console.log('connected to MongoDB')
+        //listen on specific port 
+        app.listen(5000, () => console.log('app started on port 5000'))
+    }).catch((error) => {
+        console.log('cant connect to mongodb' + error)
+    })
