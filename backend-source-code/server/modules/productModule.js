@@ -1,24 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const reviewSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    rating: {
-        type: Number,
-        required: true
-    },
-    comment: {
-        type: String,
-        required: true
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: "User" // Reference to the User model
-    }
-})
 
 const productSchema= mongoose.Schema({
     name: {
@@ -33,7 +14,7 @@ const productSchema= mongoose.Schema({
         type: String,
         required: true
     },
-    reviews: [reviewSchema], // Embedded reviews
+    
     rating: {
         type: Number,
         required: true,
@@ -79,7 +60,7 @@ productSchema.virtual('id').get(function () {
 productSchema.set('toJSON', {
     virtuals: true,
 });
-const Review = mongoose.model('Review', reviewSchema);
+
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = { Review, Product }; // Export both models as an object
+module.exports = Product; // Export both models as an object
