@@ -1,9 +1,14 @@
 import React from 'react';
+import phot1 from './phot1.jpg'
 function catalogue(){
     return(
         <div className='cata'>
             <div className='catalogue1'>
-                <a href="/">show all</a>
+                <button>
+                    <img src='./phot1.jpg' alt=' '/>show all
+
+                </button>
+                {/* <a href="/">show all</a> */}
                 <a href="/">Ring</a>
                 <a href="/">Necklace</a>
                 <a href="/">Bracelet</a>

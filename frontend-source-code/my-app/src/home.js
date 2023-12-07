@@ -8,16 +8,16 @@ import Stach from "./stach";
 
 function Home() {
     return(
+
       <div className='nav'>
-        <Navbar></Navbar>
         <div>
+        <Navbar></Navbar>
 
         </div>
         <div className='nameOfPage'>
         <h1>AccessorEase</h1>
 
         <h4>JEWELRY STOR</h4>
-        <img src="e:\Elaf\CS_304\Monster\u.png" alt="j" />
       </div>
       <div>
         <Catalogue></Catalogue>
