@@ -1,5 +1,5 @@
-const {Product} = require('../modules/productModule');
-const { Category } = require('../modules/categoryModule');
+const Product = require('../modules/productModule');
+const Category = require('../modules/categoryModule');
 const express = require('express');
 const router = express.Router();
 
@@ -32,11 +32,9 @@ router.post('/', async (req, res) => {
         name: req.body.name,
         image: req.body.image,
         description: req.body.description,
-        rating: req.body.reviews,
         numReviews: req.body.numReviews,
         rating: req.body.rating,
         category: req.body.category,
-        comment: req.body.comment,
         isFeatured: req.body.isFeatured,
         price: req.body.price,
         countInStock: req.body.countInStock
