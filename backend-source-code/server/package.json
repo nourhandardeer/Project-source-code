@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< Updated upstream:backend-source-code/server/package.json
     "start": "nodemon ./index.js"
+=======
+    "start": "node ./index.js",
+    "server": "nodemon ./index.js"
+>>>>>>> Stashed changes:server/package.json
   },
   "author": "",
   "license": "ISC",
