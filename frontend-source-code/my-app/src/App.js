@@ -1,6 +1,7 @@
 
 //import React ,{useState} from 'react';
 // import Navbar from "./navbar";
+
 import Home from './home';
 // import Catalogue from "./catalogue";
 // import Stach from "./stach";
@@ -15,10 +16,8 @@ import SignUp from './Pages/signUpForm';
 import SignIn from './Pages/SignIn';
 
 //import SignInForm from "./SignInForm";import importsignUp from './Pages/signUp';
-const Store = () => <div>import SignIn from './Pages/SignIn';
-import SignIn from './Pages/SignIn';
-
-
+const Store = () => <div>
+<Storee></Storee>
 
 </div>;
 const Contact = () => <div>

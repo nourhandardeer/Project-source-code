@@ -10,9 +10,11 @@ function catalogue(){
             <div className='catalogue1'>
                 
                 <a href="/necklaces">
-                    <img src={necklaces}></img>
+                    
+                    <img src={necklaces}>
+                    </img>
                     <hr color='white'></hr>
-                    <p1> Nicklaces</p1>
+                    <p1> Necklaces</p1>
                 </a>
                 <a href="/rings">
                     <img src={rings}></img>
@@ -32,16 +34,7 @@ function catalogue(){
                     
                 </a>
             </div>
-            <div>
-                <img src="" alt="" />
-                <p></p>
-                <img src="" alt="" />
-                <p></p>
-                <img src="" alt="" /><p></p>
-                <img src="" alt="" /><p></p>
-                <img src="" alt="" /><p></p>
-                <img src="" alt="" /><p></p>
-            </div>
+     
             <div className='but'>
                 <p>Want to see the more catalogue?</p>
                 <button>See more</button>
