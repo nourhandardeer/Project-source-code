@@ -8,7 +8,7 @@ const ProductList = () => {
   // Function to fetch products from the backend
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('/api/products');
+      const response = await axios.get('/localhost:8000/products');
       const fetchedProducts = response.data;
       setProducts(fetchedProducts); // Update state with fetched products
     } catch (error) {
