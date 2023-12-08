@@ -1,24 +1,28 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
 const orderItemSchema = mongoose.Schema({
+
+    
     quantity: {
         type: Number,
         required: true
     },
     product: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+        ref: 'Products'
     }
 })
 
 const orderSchema = mongoose.Schema({
-    orderItem:[orderItemSchema],
-
+    orderItem: {
+        type: [orderItemSchema], // If each order can have multiple items
+        required: true,
+    },
     shippingAddress: {
         type: String,
         required: true,
     },
+    
     city: {
         type: String,
         required: true,
@@ -62,5 +66,6 @@ orderSchema.set('toJSON', {
 });
 
 exports.Order = mongoose.model('Order', orderSchema);
+
 
 

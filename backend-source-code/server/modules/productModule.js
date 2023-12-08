@@ -59,4 +59,4 @@ productSchema.set('toJSON', {
 
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product; // Export both models as an object
+module.exports = Product; 
