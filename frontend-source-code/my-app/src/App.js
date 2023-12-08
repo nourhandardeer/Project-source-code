@@ -4,14 +4,23 @@
 import Home from './home';
 // import Catalogue from "./catalogue";
 // import Stach from "./stach";
+import Aboutt from './about';
 import { React } from 'react';
 import { BrowserRouter as Router ,Route,Switch } from "react-router-dom/cjs/react-router-dom.min";
 import Navbar from './navbar';
+import Contactt from './contact';
+import Storee from './Store';
 
 //import SignInForm from "./SignInForm";
-const Store = () => <div>Store Component</div>;
-const Contact = () => <div>Contact Component</div>;
-const About = () => <div>About Component</div>;
+const Store = () => <div>
+  <Storee></Storee>
+</div>;
+const Contact = () => <div>
+  <Contactt></Contactt>
+</div>;
+const About = () => <div>
+  <Aboutt></Aboutt>
+</div>;
 
 
 function App(){

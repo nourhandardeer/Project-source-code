@@ -24,9 +24,10 @@ const Navbar = () => {
         </div>
    
         <div className='cart'>
-       <a herf='/cart'>
-        <ShoppingCartTwoToneIcon></ShoppingCartTwoToneIcon>
-       </a>
+        <Link to="/cart">
+          <ShoppingCartTwoToneIcon></ShoppingCartTwoToneIcon>
+        </Link>
+
         </div>
       </nav>
  
