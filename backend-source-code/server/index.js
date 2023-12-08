@@ -5,7 +5,8 @@ const Product = require('./modules/productModule');
 const Order = require('./modules/orderModule'); 
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
-const ordersRoutes = require('./routers/orders');
+const ordersRoutes = require('./routers/order');
+const categoriesRoutes = require('./routers/categories');
 const bcrypt = require('bcrypt');
 const errorHandler = require('./errorHandler/Errors');
 //const index = express();
@@ -55,7 +56,7 @@ mongoose
     .then(() => {
         console.log('connected to MongoDB')
         //listen on specific port 
-        app.listen(5000, () => console.log('app started on port 5000'))
+        app.listen(8000, () => console.log('app started on port 8000'))
     }).catch((error) => {
         console.log('cant connect to mongodb' + error)
     })
