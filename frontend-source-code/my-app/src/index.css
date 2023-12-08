@@ -7,11 +7,23 @@
 
 
 /* base styles */
-* {
+/* App.css */
+
+/* Set the root element (body or a wrapper div) to occupy the entire viewport */
+body, #root {
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+* {
+  margin: auto;
   font-family: serif;
   color: #605757;
 }
+
 .navbar {
   padding: 30px;
   display: flex;
@@ -19,7 +31,7 @@
   max-width: 2000px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
-  background-color:antiquewhite;
+  background-color:rgb(227, 206, 180);
 }
 .navbar .links {
   margin: auto;
@@ -52,17 +64,24 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
-.nameOfPage{
+.nameofpage{
   font-style: oblique;
-  padding: 10px 16px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
   color:black;
-  background-color: beige;
+  background-color: rgb(252, 252, 248);
+}
+.nameofpage h1 {
+  text-align: center; /* Center the text */
+}
+.nameofpage h4 {
+  text-align: center; /* Center the text */
 }
 .cata {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:antiquewhite;
+  background-color:rgb(253, 252, 251);
 }
 
 .catalogue1 {
@@ -73,9 +92,9 @@
 
 .catalogue1 a {
   text-decoration: none;
-  color: #333;
+  color: #331515;
   padding: 5px 10px;
-  border: 1px solid #333;
+  border: 1px solid #f1ecec;
   border-radius: 5px;
 }
 .par{
@@ -144,4 +163,240 @@ img:hover{
   border: 1px solid #ddd; /* Add a border for visual separation */
   border-radius: 5px; /* Add border-radius for rounded corners */
 }
+/* About.css */
+
+
+
+/* About.css */
+
+.about-page {
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: calc(100vh - 120px); /* Adjust height according to your layout */
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #f1356d; /* Border color for heading */
+  padding-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Style for specific paragraphs */
+.about-content p.intro {
+  font-weight: bold;
+}
+
+.about-content p.highlight {
+  color: #f1356d;
+  font-style: italic;
+}
+
+/* Styles for the materials section */
+.materials-section {
+  margin-top: 30px;
+  border-top: 2px solid #f1356d; /* Border color for materials section */
+  padding-top: 20px;
+}
+
+.materials-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.materials-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 12px;
+}
+/* ContactUs.css */
+
+.contact-page {
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: calc(100vh - 120px); /* Adjust height according to your layout */
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contact-details {
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.contact-form {
+  border-top: 2px solid #f1356d;
+  padding-top: 20px;
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  height: 120px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #f1356d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.contact-form button:hover {
+  background-color: #d12f5b;
+}
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.input-field {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Other styles... */
+
+.ok-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color:rgb(227, 206, 180);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ok-button:hover {
+  background-color: #c4a6ae;
+}
+
+/* Additional styles can be added as needed */
+/* SignIn.css */
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.signin-heading {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.signin-input {
+  width: 300px;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signin-button {
+  
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color:rgb(227, 206, 180);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signin-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
 

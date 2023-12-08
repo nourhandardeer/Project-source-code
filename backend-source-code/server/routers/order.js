@@ -1,4 +1,7 @@
-const {Order }= require('../modules/orderModule');
+const mongoose = require('mongoose');
+const { Order}= require('../modules/orderModule');
+const { OrderItem } =  require('../modules/orderModule');
+const User = require('../modules/userModule');
 const express = require('express');
 const router = express.Router();
 
@@ -19,130 +22,158 @@ router.get(`/`, async (req, res) => {
 });
 
 
-router.get(`/:id`, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        const order = await Order.findById(req.params.id)
-            .populate('user', 'name')
-            .populate({
-                path: 'orderItems',
-                populate: {
-                    path: 'product',
-                    populate: 'category',
-                },
-            });
-
-        if (!order) {
-            return res.status(404).json({ success: false, message: 'Order not found' });
-        }
-
-        res.send(order);
+      const orderId = req.params.id;
+  
+      // Find the order by ID
+      const foundOrder = await Order.findById(orderId);
+  
+      // If the order doesn't exist, return a 404 status
+      if (!foundOrder) {
+        return res.status(404).json({ success: false, error: 'Order not found' });
+      }
+  
+      // Return the found order as JSON
+      res.json(foundOrder);
     } catch (error) {
-        console.error('Error fetching order:', error);
-        res.status(500).json({ success: false, error: 'Internal Server Error' });
+      console.error('Error fetching order by ID:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
-});
-
+  });
+  
 
 router.post('/', async (req, res) => {
     try {
-        const orderItems = req.body.orderItems.map(orderItem => new OrderItem({
-            quantity: orderItem.quantity,
-            product: orderItem.product,
-        }));
-
-        const orderItemsSaved = await OrderItem.insertMany(orderItems);
-        const totalPrices = orderItemsSaved.map(orderItem => orderItem.quantity * orderItem.product.price);
-        const totalPrice = totalPrices.reduce((acc, curr) => acc + curr, 0);
-
-        const newOrder = new Order({
-            orderItem: orderItemsSaved.map(orderItem => orderItem._id),
-            shippingAddress: req.body.shippingAddress,
-            city: req.body.city,
-            zip: req.body.zip,
-            country: req.body.country,
-            phone: req.body.phone,
-            status: req.body.status || 'Pending',
-            totalPrice: totalPrice,
-            user: req.body.user, // Assuming you have a valid user ID
-        });
-
-        const savedOrder = await newOrder.save();
-
-        res.status(201).json(savedOrder); // 201 Created status for successful creation
+      // Extract order details from the request body
+      const {
+        orderItem,
+        shippingAddress,
+        city,
+        zip,
+        country,
+        phone,
+        status = 'Pending',
+        totalPrice,
+        user,
+      } = req.body;
+  
+      // Create a new Order instance
+      const newOrder = new Order({
+        orderItem,
+        shippingAddress,
+        city,
+        zip,
+        country,
+        phone,
+        status,
+        totalPrice,
+        user,
+      });
+  
+      // Save the order to the database
+      const savedOrder = await newOrder.save();
+  
+      // Return the saved order as JSON
+      res.status(201).json(savedOrder);
     } catch (error) {
-        console.error('Error creating order:', error);
+      console.error('Error creating order:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
+  });
+
+
+  router.put('/:id', async (req, res) => {
+    try {
+      const orderId = req.params.id;
+      const { shippingAddress, city, zip, country, phone, status, totalPrice, user, orderItem } = req.body;
+  
+      // Update the order by ID
+      const updatedOrder = await Order.findByIdAndUpdate(
+        orderId,
+        { shippingAddress, city, zip, country, phone, status, totalPrice, user, orderItem },
+        { new: true }
+      );
+  
+      // If the order doesn't exist, return a 404 status
+      if (!updatedOrder) {
+        return res.status(404).json({ success: false, error: 'Order not found' });
+      }
+  
+      // Update order items if orderItem is defined and is an array
+      let updatedOrderItems = [];
+      if (Array.isArray(orderItem)) {
+        updatedOrderItems = await Promise.all(
+          orderItem.map(async (item) => {
+            const { itemId, quantity, product } = item;
+  
+            // Update each order item by ID
+            const updatedItem = await OrderItem.findByIdAndUpdate(
+              itemId,
+              { quantity, product },
+              { new: true }
+            );
+  
+            return updatedItem;
+          })
+        );
+      }
+  
+      // Return the updated order and order items as JSON
+      res.json({ success: true, order: updatedOrder, orderItems: updatedOrderItems });
+    } catch (error) {
+      console.error('Error updating order and order items by ID:', error);
+      res.status(500).json({ success: false, error: error.message || 'Internal Server Error' });
+    }
+  });
+  
+
+  router.delete('/:id', async (req, res) => {
+    try {
+      const orderId = req.params.id;
+  
+      // Check if the order exists
+      const order = await Order.findById(orderId);
+      if (!order) {
+        return res.status(404).json({ success: false, error: 'Order not found' });
+      }
+  
+      // Delete all associated order items
+      await OrderItem.deleteMany({ _id: { $in: order.orderItem } });
+  
+      // Delete the order
+      await Order.findByIdAndDelete(orderId);
+  
+      res.status(200).json({ success: true, message: 'Order deleted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, error: error.message || 'Internal Server Error' });
+    }
+  });
+   
+
+  router.get('/userorders/:userid', async (req, res) => {
+    try {
+        const userId = req.params.userid;
+
+        // Ensure the user ID is valid (you may want to add more validation)
+        if (!userId) {
+            return res.status(400).json({ success: false, error: 'Invalid user ID' });
+        }
+
+        // Find orders for the specified user ID
+        const userOrders = await Order.find({ user: userId }).populate('user', 'name').sort({ dateOrdered: -1 });
+
+        if (!userOrders) {
+            return res.status(404).json({ success: false, error: 'User orders not found' });
+        }
+
+        res.status(200).json({ success: true, data: userOrders });
+    } catch (error) {
+        console.error(error);
         res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
 });
-
-
-
-
-router.put('/:id',async (req, res)=> {
-    const order = await Order.findByIdAndUpdate(
-        req.params.id,
-        {
-            status: req.body.status
-        },
-        { new: true}
-    )
-
-    if(!order)
-    return res.status(400).send('the order cannot be update!')
-
-    res.send(order);
-})
-
-
-router.delete('/:id', (req, res)=>{
-    Order.findByIdAndRemove(req.params.id).then(async order =>{
-        if(order) {
-            await order.orderItems.map(async orderItem => {
-                await OrderItem.findByIdAndRemove(orderItem)
-            })
-            return res.status(200).json({success: true, message: 'the order is deleted!'})
-        } else {
-            return res.status(404).json({success: false , message: "order not found!"})
-        }
-    }).catch(err=>{
-       return res.status(500).json({success: false, error: err}) 
-    })
-})
-
-router.get('/get/totalsales', async (req, res)=> {
-    const totalSales= await Order.aggregate([
-        { $group: { _id: null , totalsales : { $sum : '$totalPrice'}}}
-    ])
-
-    if(!totalSales) {
-        return res.status(400).send('The order sales cannot be generated')
-    }
-
-    res.send({totalsales: totalSales.pop().totalsales})
-})
-
-router.get(`/get/count`, async (req, res) =>{
-    const orderCount = await Order.countDocuments((count) => count)
-
-    if(!orderCount) {
-        res.status(500).json({success: false})
-    } 
-    res.send({
-        orderCount: orderCount
-    });
-})
-
-router.get(`/get/userorders/:userid`, async (req, res) =>{
-    const userOrderList = await Order.find({user: req.params.userid}).populate({ 
-        path: 'orderItems', populate: {
-            path : 'product', populate: 'category'} 
-        }).sort({'dateOrdered': -1});
-
-    if(!userOrderList) {
-        res.status(500).json({success: false})
-    } 
-    res.send(userOrderList);
-})
 
 
 

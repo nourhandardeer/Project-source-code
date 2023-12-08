@@ -18,6 +18,7 @@ const orderSchema = mongoose.Schema({
         type: [orderItemSchema], // If each order can have multiple items
         required: true,
     },
+    
     shippingAddress: {
         type: String,
         required: true,
@@ -66,6 +67,5 @@ orderSchema.set('toJSON', {
 });
 
 exports.Order = mongoose.model('Order', orderSchema);
-
-
+exports.OrderItem = mongoose.model('OrderItem', orderItemSchema);  
 

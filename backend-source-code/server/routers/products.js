@@ -1,4 +1,3 @@
-
 const Product = require('../modules/productModule');
 const Category = require('../modules/categoryModule');
 const express = require('express');
