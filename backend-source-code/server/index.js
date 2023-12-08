@@ -9,6 +9,7 @@ const ordersRoutes = require('./routers/order');
 const categoriesRoutes = require('./routers/categories');
 const bcrypt = require('bcrypt');
 const errorHandler = require('./errorHandler/Errors');
+const multer = require('multer');
 //const index = express();
 const app = express()
 //const { notFound, errorHandler } = require("../Errors");
