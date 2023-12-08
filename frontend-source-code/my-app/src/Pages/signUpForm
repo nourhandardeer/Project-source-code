@@ -1,0 +1,17 @@
+function SignUp (){
+    return(
+        <div>
+            <h1>
+                SIGN IN FORM
+            </h1>
+            <input type="name" />
+            <input type="last name" />
+            <input type="user name" />
+            <input type="email" />
+            <input type="password" />
+            <input type="confirm password" />
+        </div>
+
+    );
+}
+export default SignUp;
