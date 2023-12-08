@@ -10,11 +10,10 @@ const Navbar = () => {
 
     return ( 
       <nav className="navbar" >
-        {/* <div>
-          <Search style={{ color: 'gray', fontSize: 16 }} />
-        
-
-        </div> */}
+        <div className="search_box">
+            <input type="search" placeholder='Search Here'/>
+            <span className='ffff'></span>
+        </div> 
           <div className="links">
           <Link to="/">HOME</Link>
           <Link to="/store">STORE</Link>
@@ -27,7 +26,7 @@ const Navbar = () => {
            <Link to ="/signIn">SignIn</Link>
 
           <Link to ="/signUpForm">SignUp</Link>
-          <a herf="/profile">ME</a>
+          <link to="/profile">ME</link>
 
         </div>
    
