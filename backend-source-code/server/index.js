@@ -10,11 +10,11 @@ const ordersRoutes = require('./routers/order');
 const cartRoutes = require('./routers/cart');
 const bcrypt = require('bcrypt');
 const errorHandler = require('./errorHandler/Errors');
-//const index = express();
+const cors = require('cors');
 const app = express()
 require('dotenv/config');
 
-
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(errorHandler);
