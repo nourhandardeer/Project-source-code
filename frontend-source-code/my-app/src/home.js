@@ -16,14 +16,8 @@ function Home() {
 
       <div className='nav'>
         <div>
-        <Navbar></Navbar>
 
         </div>
-        <div className='nameOfPage'>
-        <h1>AccessorEase</h1>
-
-        <h4>JEWELRY STOR</h4>
-      </div>
       <div>
         <Catalogue></Catalogue>
       </div>

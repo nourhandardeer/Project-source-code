@@ -9,20 +9,20 @@ function catalogue(){
         <div className='cata'>
             <div className='catalogue1'>
                 
-                <a href="/">
+                <a href="/necklaces">
                     <img src={necklaces}></img>
                     Nicklaces
                 </a>
-                <a href="/">
+                <a href="/rings">
                     <img src={rings}></img>
                     Rings
                 </a>
-                <a href="/">
+                <a href="/bracelets">
                 <img src={bracelet}></img>
 
                     Bracelets
                 </a>
-                <a href="/">
+                <a href="/earings">
                     <img  src={earrings}></img>
                     Earring
                 </a>

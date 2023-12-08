@@ -7,8 +7,19 @@
 
 
 /* base styles */
-* {
+/* App.css */
+
+/* Set the root element (body or a wrapper div) to occupy the entire viewport */
+body, #root {
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+* {
+  margin: auto;
   font-family: serif;
   color: #605757;
 }
@@ -20,7 +31,7 @@
   max-width: 2000px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
-  background-color:antiquewhite;
+  background-color:rgb(227, 206, 180);
 }
 .navbar .links {
   margin: auto;
@@ -53,11 +64,18 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
-.nameOfPage{
+.nameofpage{
   font-style: oblique;
-  padding: 10px 16px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
   color:black;
   background-color: rgb(252, 252, 248);
+}
+.nameofpage h1 {
+  text-align: center; /* Center the text */
+}
+.nameofpage h4 {
+  text-align: center; /* Center the text */
 }
 .cata {
   display: flex;
