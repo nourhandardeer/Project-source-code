@@ -4,18 +4,17 @@ const mongoose = require('mongoose');
 const Product = require('./modules/productModule');
 const Order = require('./modules/orderModule'); 
 const productsRouter = require('./routers/products');
+const categoriesRoutes= require('./routers/categories')
 const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/order');
-const categoriesRoutes = require('./routers/categories');
+const cartRoutes = require('./routers/cart');
 const bcrypt = require('bcrypt');
 const errorHandler = require('./errorHandler/Errors');
-const multer = require('multer');
-//const index = express();
+const cors = require('cors');
 const app = express()
-//const { notFound, errorHandler } = require("../Errors");
 require('dotenv/config');
 
-
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(errorHandler);
@@ -27,6 +26,7 @@ app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
+app.use('/cart', cartRoutes)
 // app.use(notFound)
 // app.use(errorHandler)
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");
