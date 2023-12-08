@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const category = new Category({
+    let category = new Category({
         name: req.body.name,
         image: req.body.image
     })
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id',async (req, res)=> {
-    const category = await Category.findByIdAndUpdate(
+    let category = await Category.findByIdAndUpdate(
         req.params.id,
         {
             name: req.body.name,
@@ -44,7 +44,7 @@ router.put('/:id',async (req, res)=> {
 
 router.delete('/:id', (req, res)=>{
     //then: return a document
-    Category.findByIdAndRemove(req.params.id).then(category =>{
+    Category.findByIdAndDelete(req.params.id).then(category =>{
         if(category) {
             return res.status(200).json({success: true, message: 'the category is deleted!'})
         } else {

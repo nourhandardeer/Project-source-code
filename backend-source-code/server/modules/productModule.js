@@ -43,6 +43,10 @@ const productSchema= mongoose.Schema({
     isFeatured: {
         type: Boolean,
         default: false,
+    },
+    dateCreated: {
+        type: Date,
+        default: Date.now,
     }
 },
 {
