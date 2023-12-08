@@ -8,13 +8,16 @@ const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/orders');
 const categoriesRoutes = require ('./routers/categories')
 const bcrypt = require('bcrypt');
+const errorHandler = require('./errorHandler/Errors');
 //const index = express();
 const app = express()
+//const { notFound, errorHandler } = require("../Errors");
 require('dotenv/config');
 
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(errorHandler);
 
 //routers
 const api = process.env.API_URL;
@@ -23,6 +26,8 @@ app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
+// app.use(notFound)
+// app.use(errorHandler)
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");
 
 

@@ -6,12 +6,13 @@ const router = express.Router();
 const mongoose = require('mongoose')
 
 router.get(`/`, async (req, res) => {
+    //list products by category
     let filter = {};
     // /products?categories=2635,2737
     if (req.query.categories) {
         filter = { category: req.query.categories.split(',') }
     }
-    //else if the filter is empty, it will get all products
+    //else if the filter is empty, it will list all products
     const productList = await Product.find(filter).populate('category');
 
     if (!productList) {
@@ -110,7 +111,7 @@ router.put('/:id', async (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    Product.findByIdAndRemove(req.params.id).then(product => {
+    Product.findByIdAndDelete(req.params.id).then(product => {
         if (product) {
             return res.status(200).json({ success: true, message: 'the product is deleted!' })
         } else {
