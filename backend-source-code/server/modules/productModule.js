@@ -34,7 +34,7 @@ const productSchema= mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         required:true
-    },
+     },
     countInStock: {
         type: Number,
         required: true,
@@ -44,10 +44,10 @@ const productSchema= mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    // dateCreated: {
-    //     type: Date,
-    //     default: Date.now,
-    // }
+    dateCreated: {
+        type: Date,
+        default: Date.now,
+    }
 },
 {
     timestamps: true
@@ -63,4 +63,4 @@ productSchema.set('toJSON', {
 
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product; // Export both models as an object
+module.exports = Product; 
