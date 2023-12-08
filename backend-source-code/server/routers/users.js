@@ -90,6 +90,7 @@ if(user && bcrypt.compareSync(req.body.password, user.password)){
         {expiresIn : '1d'}
  )
    return res.status(200).send({user: user.email,token: token})
+   
 }
 else{
     res.status(400).send('password is wrong!')

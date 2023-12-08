@@ -1,28 +1,35 @@
-const jwt = require('express-jwt');
-const secret = process.env.secret;
+const expressJwt = require('express-jwt');
 
 function authJwt() {
-  return jwt({
-    secret: secret,
-    algorithms: ['HS256'],
-    isRevoked: (req, payload, done) => {
-      if (!payload.isAdmin) {
-        done(null, true); // Revoking access if user is not an admin
-      } else {
-        done(); // Allowing access for admin users
-      }
-    }
-  }).unless({
-    path: [
-      // Define your allowed paths here
-      /\/public\/uploads(.*)/,
-      /\/products(.*)/,
-      /\/categories(.*)/,
-      /\/orders(.*)/,
-      '/users/login',
-      '/users/register'
-    ]
-  });
+    const secret = process.env.secret;
+    const api = process.env.API_URL;
+    return expressJwt({
+        secret,
+        algorithms: ['HS256'],
+        isRevoked: isRevoked
+    }).unless({
+        path: [
+            {url: /\/public\/uploads(.*)/ , methods: ['GET', 'OPTIONS'] },
+            {url: /\/products(.*)/ , methods: ['GET', 'OPTIONS'] },
+            {url: /\categories(.*)/ , methods: ['GET', 'OPTIONS'] },
+            {url: /\orders(.*)/,methods: ['GET', 'OPTIONS', 'POST']},
+            `${api}/users/login`,
+            `${api}/users/register`,
+        ]
+    })
 }
 
-module.exports = authJwt;
+async function isRevoked(req, payload, done) {
+    if(!payload.isAdmin) {
+        done(null, true)
+    }
+
+    done();
+}
+
+
+
+module.exports = authJwt
+
+
+
