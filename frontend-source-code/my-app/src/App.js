@@ -11,9 +11,13 @@ import Navbar from './navbar';
 import Contactt from './Pages/contact';
 import Storee from './Pages/Store';
 import Cartt from './Pages/cart';
+import SignUp from './Pages/signUpForm';
+import SignIn from './Pages/SignIn';
 
 //import SignInForm from "./SignInForm";import importsignUp from './Pages/signUp';
-const Store = () => <div>
+const Store = () => <div>import SignIn from './Pages/SignIn';
+import SignIn from './Pages/SignIn';
+
 
 
 </div>;
@@ -24,8 +28,12 @@ const About = () => <div>
   <Aboutt></Aboutt>
 </div>;
 const signUp=()=><div>
-  signUp
-</div>
+  <SignUp></SignUp>
+</div>;
+
+const signIn=()=><div>
+  <SignIn></SignIn>
+</div>;
 const cart=()=> <div>
   <Cartt></Cartt>
 </div>
@@ -51,7 +59,8 @@ return(
       <Route path="/store" component={Store} />
       <Route path="/contact" component={Contact} />
       <Route path="/about" component={About} />
-      <Route path="/SignUp" component={signUp}></Route>
+      <Route path="/signUpForm" component={signUp}></Route>
+      <Route path="/SignIn" component={signIn}></Route>
       <Route path="/cart" component={cart}></Route>
     </Switch>
   </div>

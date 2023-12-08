@@ -11,20 +11,25 @@ function catalogue(){
                 
                 <a href="/necklaces">
                     <img src={necklaces}></img>
-                    Nicklaces
+                    <hr color='white'></hr>
+                    <p1> Nicklaces</p1>
                 </a>
                 <a href="/rings">
                     <img src={rings}></img>
-                    Rings
+                    <hr color='white'></hr>
+                    <p1>Rings</p1>
                 </a>
                 <a href="/bracelets">
                 <img src={bracelet}></img>
-
-                    Bracelets
+                <hr color='white'></hr>
+                    <p1> Bracelets</p1>
+                    
                 </a>
                 <a href="/earings">
                     <img  src={earrings}></img>
-                    Earring
+                    <hr color='white'></hr>
+                    <p1> Earring</p1>
+                    
                 </a>
             </div>
             <div>

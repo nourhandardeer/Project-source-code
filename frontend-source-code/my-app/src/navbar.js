@@ -1,7 +1,8 @@
 //import { Router } from 'express';
 import { Link } from 'react-router-dom';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
-import signUp from './Pages/signUp';
+// import styled from "styled-components";
+
 
 
 
@@ -9,6 +10,11 @@ const Navbar = () => {
 
     return ( 
       <nav className="navbar" >
+        {/* <div>
+          <Search style={{ color: 'gray', fontSize: 16 }} />
+        
+
+        </div> */}
           <div className="links">
           <Link to="/">HOME</Link>
           <Link to="/store">STORE</Link>
@@ -18,7 +24,9 @@ const Navbar = () => {
 
         <div className="links2">
            {/* <SearchIcon></SearchIcon> */}
-          <Link to ="/Signup">SignUp</Link>
+           <Link to ="/signIn">SignIn</Link>
+
+          <Link to ="/signUpForm">SignUp</Link>
           <a herf="/profile">ME</a>
 
         </div>
