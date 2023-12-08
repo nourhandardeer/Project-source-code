@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
 router.get(`/`, async (req, res) => {
     //list products by category
     let filter = {};
@@ -33,7 +34,7 @@ router.get(`/:id`, async (req, res) => {
 })
 
 router.get(`/get/count`, async (req, res) => {
-    //countDoc: get the count and return it
+    //countDoc: get the number of products and return it
     const productCount = await Product.countDocuments((count) => count)
 
     if (!productCount) {
