@@ -8,14 +8,11 @@ const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/order');
 const categoriesRoutes = require('./routers/categories');
 const bcrypt = require('bcrypt');
-<<<<<<< HEAD
-const authJwt=require('./helpers/jwt');
-=======
 const errorHandler = require('./errorHandler/Errors');
+const multer = require('multer');
 //const index = express();
 const app = express()
 //const { notFound, errorHandler } = require("../Errors");
->>>>>>> 850ec831dc76acc6ec6cc88ba96a797eddfcc0df
 require('dotenv/config');
 
 
@@ -28,9 +25,6 @@ const api = process.env.API_URL;
 
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
-<<<<<<< HEAD
-app.use(authJwt);
-=======
 app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
 // app.use(notFound)
@@ -57,7 +51,6 @@ index.use(errorHandler);
         res.status(500).json({message: error.message})
     }
 }); */
->>>>>>> 850ec831dc76acc6ec6cc88ba96a797eddfcc0df
 mongoose.set("strictQuery", false)
 mongoose
     .connect('mongodb://127.0.0.1:27017/projectData')
