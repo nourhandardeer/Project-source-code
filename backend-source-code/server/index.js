@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const productsRouter = require('./routers/products');
 const usersRoutes = require('./routers/users');
 const bcrypt = require('bcrypt');
+const authJwt=require('./helpers/jwt');
 require('dotenv/config');
 const app = express();
 const api = process.env.API_URL;
@@ -12,7 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 //routers
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
-
+app.use(authJwt);
 mongoose.set("strictQuery", false)
 mongoose
     .connect('mongodb://127.0.0.1:27017/projectData')
