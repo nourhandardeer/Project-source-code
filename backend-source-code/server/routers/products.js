@@ -3,7 +3,7 @@ const Product = require('../modules/productModule');
 const Category = require('../modules/categoryModule');
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 router.get(`/`, async (req, res) => {
     //list products by category
