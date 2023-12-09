@@ -37,9 +37,11 @@ function Home() {
       <div className='about'>
         <Aboutt></Aboutt>
       </div>
+      
     </div>
     );
 }
 
 export default Home;
+
 

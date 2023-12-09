@@ -35,10 +35,6 @@ function catalogue(){
                 </a>
             </div>
      
-            <div className='but'>
-                <p>Want to see the more catalogue?</p>
-                <button>See more</button>
-            </div>
         </div>
     );
 }

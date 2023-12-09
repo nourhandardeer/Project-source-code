@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -26,10 +27,12 @@ const ProductList = () => {
       <ul>
         {products.map(product => (
           <li key={product._id}>
+            
             {product.name}
-            <img src="/src/images/bracelets/Serpent Bracelet.jpg" className='images'/>
+            <img src={product.image} alt=" "/>
             {product.price}
           </li>
+          
         ))}
       </ul>
     </div>
@@ -37,3 +40,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+

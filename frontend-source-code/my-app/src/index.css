@@ -6,16 +6,13 @@
 
 
 
-/* base styles */
-/* App.css */
 
-/* Set the root element (body or a wrapper div) to occupy the entire viewport */
 body, #root {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-x: hidden; 
 }
 
 * {
@@ -31,7 +28,7 @@ body, #root {
   max-width: 2000px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
-  background-color:rgb(227, 206, 180);
+  background-color:rgb(181, 143, 114);
 }
 .navbar .links {
   margin: auto;
@@ -50,7 +47,6 @@ body, #root {
   padding: 20px;
 }
 
-/* blog previews / list */
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
@@ -66,22 +62,23 @@ body, #root {
 }
 .nameofpage{
   font-style: oblique;
-  justify-content: center; /* Center horizontally */
+  justify-content: center; 
   align-items: center; 
   color:black;
-  background-color: rgb(173, 161, 134);
+  background-color: rgb(236, 207, 156);
 }
 .nameofpage h1 {
-  text-align: center; /* Center the text */
+  text-align: center;
 }
 .nameofpage h4 {
-  text-align: center; /* Center the text */
+  text-align: center; 
 }
 .cata {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:rgb(214, 191, 167);
+  background-color: #fcddb5; /* Center align text */
+;
 }
 
 .catalogue1 {
@@ -169,12 +166,11 @@ img:hover{
 
 
 
-/* About.css */
 
 .about-page {
   padding: 20px;
   background-color: #f8f8f8;
-  min-height: calc(100vh - 120px); /* Adjust height according to your layout */
+  min-height: calc(100vh - 120px); 
 }
 
 .about-content {
@@ -190,7 +186,7 @@ img:hover{
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #333;
-  border-bottom: 2px solid #f1356d; /* Border color for heading */
+  border-bottom: 2px solid #f1356d;
   padding-bottom: 10px;
 }
 
@@ -201,7 +197,6 @@ img:hover{
   margin-bottom: 15px;
 }
 
-/* Style for specific paragraphs */
 .about-content p.intro {
   font-weight: bold;
 }
@@ -211,10 +206,9 @@ img:hover{
   font-style: italic;
 }
 
-/* Styles for the materials section */
 .materials-section {
   margin-top: 30px;
-  border-top: 2px solid #f1356d; /* Border color for materials section */
+  border-top: 2px solid #f1356d; 
   padding-top: 20px;
 }
 
@@ -230,12 +224,11 @@ img:hover{
   color: #444;
   margin-bottom: 12px;
 }
-/* ContactUs.css */
 
 .contact-page {
   padding: 20px;
   background-color: #f8f8f8;
-  min-height: calc(100vh - 120px); /* Adjust height according to your layout */
+  min-height: calc(100vh - 120px); 
 }
 
 .contact-content {
@@ -337,7 +330,6 @@ img:hover{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-/* Other styles... */
 
 .ok-button {
   width: 100%;
@@ -356,8 +348,7 @@ img:hover{
   background-color: #c4a6ae;
 }
 
-/* Additional styles can be added as needed */
-/* SignIn.css */
+
 
 .signin-container {
   display: flex;
@@ -436,17 +427,16 @@ p {
 }
 
 
-/* Add responsive styles for mobile devices */
 @media only screen and (max-width: 600px) {
   .navbar {
     padding: 15px;
-    flex-direction: column; /* Change to column layout for smaller screens */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text */
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
   }
 
   .navbar .links {
-    margin: 10px 0; /* Adjust margin for better spacing */
+    margin: 10px 0; 
   }
 
   .navbar a {
@@ -547,7 +537,7 @@ p {
 
   .best-sellers img {
     width: 150px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
     margin-bottom: 10px;
   }
   .search_box {
@@ -562,15 +552,13 @@ p {
     margin-right: 10px;
   }
   
-  /* Add a custom style for the search icon (assuming it's a FontAwesome icon) */
   .search_box .ffff::before {
-    content: '\f002'; /* Unicode for the search icon in FontAwesome */
-    font-family: 'FontAwesome'; /* Ensure the FontAwesome font is available */
-    color: #333; /* Adjust the color of the icon */
+    content: '\f002'; 
+    font-family: 'FontAwesome'; 
+    color: #333;
     cursor: pointer;
   }
   
-  /* Adjust the overall layout of the navbar */
   .navbar {
     display: flex;
     align-items: center;
@@ -599,6 +587,7 @@ p {
     color: #555;
   }
   
+  
   p {
     margin-bottom: 15px;
     color: #666;
@@ -612,6 +601,6 @@ p {
   .materials-section {
     margin-top: 30px;
   }
+  
 }
-
 
