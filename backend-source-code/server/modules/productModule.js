@@ -7,7 +7,8 @@ const productSchema= mongoose.Schema({
         required: true
     },
     image: {
-        url: String
+        type: String,
+        required: true,
     },
     
     rating: {
