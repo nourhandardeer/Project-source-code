@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-  function App() {
- 
-const [Products, setProducts] = useState([{}])
+function App() {
 
-<<<<<<< Updated upstream
-   useEffect(() => {
-    fetch("/products").then (
+  const [Products, setProducts] = useState([{}])
+
+
+  useEffect(() => {
+    fetch("/products").then(
       res => res.json()
     ).then(
       data => {
@@ -18,18 +18,18 @@ const [Products, setProducts] = useState([{}])
 
   return (
     <div>
-       {
-       Products.map((product) => (
-        <li key={product.id}>
-        {product.name} - ${product.price}
-      </li>
-       ))
-      
+      {
+        Products.map((product) => (
+          <li key={product.id}>
+            {product.name} - ${product.price}
+          </li>
+        ))
+
       }
-      </div>
-      );
-        }
-       
+    </div>
+  );
+}
+
 export default App;
 
 =======
