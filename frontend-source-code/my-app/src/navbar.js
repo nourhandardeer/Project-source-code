@@ -1,20 +1,15 @@
 //import { Router } from 'express';
 import { Link } from 'react-router-dom';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
-// import styled from "styled-components";
-//import SearchIcon from '@mui/icons-material/Search';
 
 
-
+//import SearchIcon from '@mui/icons-material/Search';  
 
 const Navbar = () => {
-
+  
     return ( 
       <nav className="navbar" >
-         <div className="search_box">
-            <input type="search" placeholder='Search Here'/>
-            <span className='ffff'></span>
-        </div> 
+         
           <div className="links">
           <Link to="/">HOME</Link>
           <Link to="/store">STORE</Link>
@@ -26,7 +21,7 @@ const Navbar = () => {
            {/* <SearchIcon></SearchIcon> */}
            <Link to ="/signIn">SignIn</Link>
           <Link to ="/signUpForm">SignUp</Link>
-          <Link to="/Profile">ME</Link>
+          <Link to="/">ME</Link>
 
         </div>
    
