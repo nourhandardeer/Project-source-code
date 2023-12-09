@@ -69,7 +69,7 @@ body, #root {
   justify-content: center; /* Center horizontally */
   align-items: center; 
   color:black;
-  background-color: rgb(252, 252, 248);
+  background-color: rgb(173, 161, 134);
 }
 .nameofpage h1 {
   text-align: center; /* Center the text */
@@ -81,13 +81,14 @@ body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:rgb(253, 252, 251);
+  background-color:rgb(214, 191, 167);
 }
 
 .catalogue1 {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  background-color: #ecd9b4;
 }
 
 .catalogue1 a {
@@ -139,7 +140,8 @@ img:hover{
 
 /* Style for the container div */
 .best-sellers {
-  text-align: center; /* Center align text */
+  text-align: center;
+  background-color: #fcddb5; /* Center align text */
 }
 
 /* Style for the heading */
@@ -394,6 +396,47 @@ img:hover{
 .signin-button:hover {
   background-color: #0056b3;
 }
+.about {
+  background-color:#d8bb86;
+}
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e2cb9a;
+}
+
+.about-content {
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  
+}
+
+.intro {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #555;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+.materials-section {
+  margin-top: 30px;
+}
+
+
+/* Add responsive styles for mobile devices */
 @media only screen and (max-width: 600px) {
   .navbar {
     padding: 15px;
@@ -536,13 +579,39 @@ img:hover{
     background-color: rgb(227, 206, 180);
     border-bottom: 1px solid #f2f2f2;
   }
+  .about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
+  .about-content {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .intro {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #ff9900;
+  }
+  
+  .materials-section {
+    margin-top: 30px;
+  }
 }
-
-
-
-
-
-
 
 
