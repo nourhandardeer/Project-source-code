@@ -6,25 +6,22 @@ import Stach from "./stach";
 import p1 from './images/White Ring.jpg';
 import p2 from './images/p2.jpg';
 import p3 from './images/p3.jpg';
-
-
-
+import Aboutt from './Pages/about';
+// const About = () => <div>
+//   <Aboutt></Aboutt>
+// </div>;
 
 
 function Home() {
     return(
-
       <div className='nav'>
-        <div>
-
-        </div>
+        
+        
       <div>
         <Catalogue></Catalogue>
       </div>
       <div>
-        <Stach></Stach>
-      </div>
-    <div className='best-sellers'>
+      <div className='best-sellers'>
         <h1>Our Best Sellers</h1>
         <a href='https://example.com/product1'>
           <img src={p1} alt="Product 1" />
@@ -36,9 +33,13 @@ function Home() {
           <img src={p3} alt="Product 3" />
         </a>
       </div>
-
+      </div>
+      <div className='about'>
+        <Aboutt></Aboutt>
+      </div>
     </div>
     );
 }
 
 export default Home;
+s
