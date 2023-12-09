@@ -13,6 +13,8 @@ import Storee from './Pages/Store';
 import Cartt from './Pages/cart';
 import SignUp from './Pages/signUpForm';
 import SignIn from './Pages/SignIn';
+import Profile from './Pages/profle';
+
 
 //import SignInForm from "./SignInForm";import importsignUp from './Pages/signUp';
 const Store = () => <div>
@@ -32,6 +34,9 @@ const signIn=()=><div>
 </div>;
 const cart=()=> <div>
   <Cartt></Cartt>
+</div>
+const profile=()=><div>
+  <Profile></Profile>
 </div>
 
 
@@ -57,6 +62,7 @@ return(
       <Route path="/signUpForm" component={signUp}></Route>
       <Route path="/SignIn" component={signIn}></Route>
       <Route path="/cart" component={cart}></Route>
+      <Route path="/profile" component={profile}></Route>
     </Switch>
   </div>
 </Router> 
