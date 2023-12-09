@@ -4,7 +4,7 @@ import axios from 'axios';
  
 const [Products, setProducts] = useState([{}])
 
-<<<<<<< Updated upstream
+
    useEffect(() => {
     fetch("/products").then (
       res => res.json()
@@ -30,9 +30,8 @@ const [Products, setProducts] = useState([{}])
       );
         }
        
-export default App;
 
-=======
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const categories = '2635,2737'; // Replace with the categories you want to filter
@@ -84,4 +83,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
->>>>>>> Stashed changes
+
