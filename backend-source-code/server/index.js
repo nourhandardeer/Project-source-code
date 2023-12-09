@@ -29,8 +29,6 @@ app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
 
-app.use('/categories', categoriesRoutes);
-
 
 mongoose.set("strictQuery", false)
 mongoose
