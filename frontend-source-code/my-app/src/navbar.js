@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 // import styled from "styled-components";
+//import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -10,7 +11,7 @@ const Navbar = () => {
 
     return ( 
       <nav className="navbar" >
-        <div className="search_box">
+         <div className="search_box">
             <input type="search" placeholder='Search Here'/>
             <span className='ffff'></span>
         </div> 
@@ -24,9 +25,8 @@ const Navbar = () => {
         <div className="links2">
            {/* <SearchIcon></SearchIcon> */}
            <Link to ="/signIn">SignIn</Link>
-
           <Link to ="/signUpForm">SignUp</Link>
-          <link to="/profile">ME</link>
+          <Link to="/Profile">ME</Link>
 
         </div>
    
