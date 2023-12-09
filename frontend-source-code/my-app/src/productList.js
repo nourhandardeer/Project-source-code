@@ -23,7 +23,11 @@ const ProductList = () => {
           <li key={product._id}>
             
             {product.name}
+<<<<<<< HEAD
             <img src={product.image} alt=" "/>
+=======
+            <img src={product.image} alt="jhgjgjg "/>
+>>>>>>> e35d0ed6cdcffbd9be3e46ee0f703527b35f085e
             {product.price}
           </li>
           
