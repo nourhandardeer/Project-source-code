@@ -21,7 +21,12 @@ const [Products, setProducts] = useState([{}])
        {
        Products.map((product) => (
         <li key={product.id}>
-        {product.name} - ${product.price}
+          <p>${product.price}</p> 
+       {/*  <p>{product.name} </p>
+        <img src={product.image} alt=" "/>
+        <p>${product.rating}</p>
+        <p>${product.price}</p> */}
+        
       </li>
        ))
       
@@ -32,6 +37,9 @@ const [Products, setProducts] = useState([{}])
        
         export default App;
 
+
+
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const categories = '2635,2737'; // Replace with the categories you want to filter
@@ -39,7 +47,7 @@ const ProductList = () => {
 
 
   // Function to fetch products from the backend
-  const fetchProducts = async () => {
+  /* const fetchProducts = async () => {
     try {
       const response = await axios.get('/localhost:8000/products');
       const fetchedProducts = response.data;
@@ -48,11 +56,11 @@ const ProductList = () => {
       console.error('Error fetching products:', error);
       // Handle the error as needed (e.g., show an error message to the user)
     }
-  };
+  }; */
 
   // Fetch products when the component mounts
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
         const response = await axios.get(`/products?categories=${categories}`);
@@ -64,7 +72,7 @@ const ProductList = () => {
     };
 
     fetchProductsByCategory();
-  }, [categories]);
+  }, [categories]); */
 
   return (
     <div>
