@@ -25,13 +25,12 @@ app.use(errorHandler);
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
-<<<<<<< Updated upstream
+
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
 
-=======
 app.use('/categories', categoriesRoutes);
->>>>>>> Stashed changes
+
 
 mongoose.set("strictQuery", false)
 mongoose
