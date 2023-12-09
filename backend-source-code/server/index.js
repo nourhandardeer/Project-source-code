@@ -28,14 +28,7 @@ app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
-<<<<<<< Updated upstream
 app.use('/up', multerRoutes);
-=======
-app.use('/up', multerRoutes)
-// app.use(notFound)
-// app.use(errorHandler)
-/* const { notFound, errorHandler } = require("../backend-source-code/Errors");
->>>>>>> Stashed changes
 
 mongoose.set("strictQuery", false)
 mongoose
