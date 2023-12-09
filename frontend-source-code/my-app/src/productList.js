@@ -30,7 +30,7 @@ const [Products, setProducts] = useState([{}])
       );
         }
        
-
+        export default App;
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -82,5 +82,5 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+//export default ProductList;
 
