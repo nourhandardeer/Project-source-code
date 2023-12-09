@@ -1,7 +1,7 @@
 //import { Router } from 'express';
 import { Link } from 'react-router-dom';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
-import Profile from './Pages/Profile';
+
 
 //import SearchIcon from '@mui/icons-material/Search';  
 
@@ -21,7 +21,7 @@ const Navbar = () => {
            {/* <SearchIcon></SearchIcon> */}
            <Link to ="/signIn">SignIn</Link>
           <Link to ="/signUpForm">SignUp</Link>
-          <Link to="/Profile">ME</Link>
+          <Link to="/">ME</Link>
 
         </div>
    
