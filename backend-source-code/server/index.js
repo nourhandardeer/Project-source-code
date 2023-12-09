@@ -8,6 +8,7 @@ const categoriesRoutes= require('./routers/categories')
 const usersRoutes = require('./routers/users');
 const ordersRoutes = require('./routers/order');
 const cartRoutes = require('./routers/cart');
+const multerRoutes = require('./routers/upload');
 const bcrypt = require('bcrypt');
 const errorHandler = require('./errorHandler/Errors');
 const cors = require('cors');
@@ -27,6 +28,7 @@ app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
+app.use('/up', multerRoutes);
 // app.use(notFound)
 // app.use(errorHandler)
 /* const { notFound, errorHandler } = require("../backend-source-code/Errors");

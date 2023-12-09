@@ -5,7 +5,6 @@
 import Home from './home';
 // import Catalogue from "./catalogue";
 // import Stach from "./stach";
-import Aboutt from './Pages/about';
 import { React } from 'react';
 import { BrowserRouter as Router ,Route,Switch } from "react-router-dom/cjs/react-router-dom.min";
 import Navbar from './navbar';
@@ -23,9 +22,7 @@ const Store = () => <div>
 const Contact = () => <div>
   <Contactt></Contactt>
 </div>;
-const About = () => <div>
-  <Aboutt></Aboutt>
-</div>;
+
 const signUp=()=><div>
   <SignUp></SignUp>
 </div>;
@@ -57,7 +54,6 @@ return(
       <Route exact path="/" component={Home} />
       <Route path="/store" component={Store} />
       <Route path="/contact" component={Contact} />
-      <Route path="/about" component={About} />
       <Route path="/signUpForm" component={signUp}></Route>
       <Route path="/SignIn" component={signIn}></Route>
       <Route path="/cart" component={cart}></Route>

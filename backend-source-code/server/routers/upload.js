@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname,"../images")); // Specify the folder where uploaded files will be stored
   },
   filename:function (req, file, cb) {
-    cb(null,file.originalname); // Use a unique filename
+    cb(null, Date.now() + path.extname(file.originalname)); // Use a unique filename
   },
 });
 
