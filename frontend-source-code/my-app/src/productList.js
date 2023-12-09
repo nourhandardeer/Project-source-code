@@ -21,7 +21,7 @@ const ProductList = () => {
         {products.map(product => (
           <li key={product._id}>
             {product.name}
-            <img src={product.image} alt=" "/>
+            <img src={product.image} alt="jhgjgjg "/>
             {product.price}
           </li>
         ))}
