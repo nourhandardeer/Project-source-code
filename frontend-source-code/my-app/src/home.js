@@ -7,6 +7,7 @@ import p1 from './images/White Ring.jpg';
 import p2 from './images/p2.jpg';
 import p3 from './images/p3.jpg';
 import Aboutt from './Pages/about';
+import OurProdect from'./Pages/OurProdect';
 // const About = () => <div>
 //   <Aboutt></Aboutt>
 // </div>;
@@ -37,9 +38,11 @@ function Home() {
       <div className='about'>
         <Aboutt></Aboutt>
       </div>
+      <div className='ourProdect'>
+        <OurProdect></OurProdect>
+      </div>
     </div>
     );
 }
 
 export default Home;
-
