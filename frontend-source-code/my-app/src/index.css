@@ -77,7 +77,7 @@ body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fcddb5;
+  background-color: #fcddb5; /* Center align text */
 ;
 }
 
@@ -604,35 +604,3 @@ p {
   
 }
 
-/* Footer.css */
-
-/* Basic styling for the footer */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer p {
-  margin-bottom: 10px;
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.footer-links li a {
-  color: #fff;
-  text-decoration: none;
-}

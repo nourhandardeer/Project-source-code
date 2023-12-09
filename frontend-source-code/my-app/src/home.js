@@ -7,7 +7,6 @@ import p1 from './images/White Ring.jpg';
 import p2 from './images/p2.jpg';
 import p3 from './images/p3.jpg';
 import Aboutt from './Pages/about';
-import Footer from './footer';
 // const About = () => <div>
 //   <Aboutt></Aboutt>
 // </div>;
@@ -38,9 +37,7 @@ function Home() {
       <div className='about'>
         <Aboutt></Aboutt>
       </div>
-      <div>
-        <Footer></Footer>
-      </div>
+      
     </div>
     );
 }

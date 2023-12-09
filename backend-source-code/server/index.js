@@ -1,8 +1,5 @@
 const express = require("express");
-const mongoose = require('mongoose');
- const User = require('./modules/userModule');
-const Product = require('./modules/productModule');
-const Order = require('./modules/orderModule'); 
+const mongoose = require('mongoose'); 
 const productsRouter = require('./routers/products');
 const categoriesRoutes= require('./routers/categories')
 const usersRoutes = require('./routers/users');
@@ -10,49 +7,33 @@ const ordersRoutes = require('./routers/order');
 const cartRoutes = require('./routers/cart');
 const multerRoutes = require('./routers/upload');
 const bcrypt = require('bcrypt');
+const authJwt=require('./helpers/jwt')
 const errorHandler = require('./errorHandler/Errors');
 const cors = require('cors');
+
 const app = express()
 require('dotenv/config');
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  }));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(errorHandler);
-
+/* app.use(authJwt); */
 //routers
-const api = process.env.API_URL;
+//const api = process.env.API_URL;
 
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
+
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
-app.use('/up', multerRoutes);
-// app.use(notFound)
-// app.use(errorHandler)
-/* const { notFound, errorHandler } = require("../backend-source-code/Errors");
 
 
-const index = express();
-const app = express()
-
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
-
-
-
-index.use(notFound);
-index.use(errorHandler);
-
-/* app.get('/products', async (req, res) => {
-    try {
-        const products = await Product.find({});
-        res.status(200).json(products);
-    } catch (error) {
-        res.status(500).json({message: error.message})
-    }
-}); */
 mongoose.set("strictQuery", false)
 mongoose
     .connect('mongodb://127.0.0.1:27017/projectData')
