@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import necklacesImage from './images/necklaces.png';
@@ -6,32 +7,17 @@ import earringsImage from './images/earrings.png';
 import ringsImage from './images/rings.jpg';
 
 function Catalogue() {
-//   const [searchTerm, setSearchTerm] = useState('');
-//   const history = useHistory();
 
-//   const handleSearch = (e) => {
-//     e.preventDefault();
-//     if (searchTerm.toLowerCase() === 'necklaces') {
-//       history.push('/necklaces');
-//     } else if (searchTerm.toLowerCase() === 'earrings') {
-//       history.push('/earrings');
-//     } else {
-//       console.log('Product not found');
-//       // Handle other search terms or display an error message
-//     }
-//  };
+ 
+     
+
+
 
   return (
     <div className='cata'>
-      {/* <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          placeholder='Search for products...'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button type='submit'>Search</button>
-      </form> */}
+      
+
+      {/* Catalog Items */}
       <div className='catalogue1'>
         <a href='/necklaces'>
           <img src={necklacesImage} alt='Necklaces' />
