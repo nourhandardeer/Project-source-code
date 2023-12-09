@@ -1,14 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+ 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
-
-
-
-
 
   useEffect(() => {
     axios.get('/products') // Make a GET request to your API endpoint
@@ -19,7 +14,6 @@ const ProductList = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
-
 
   return (
     <div>
@@ -38,6 +32,7 @@ const ProductList = () => {
     </div>
   );
 };
+ 
+
 
 export default ProductList;
-
