@@ -394,6 +394,152 @@ img:hover{
 .signin-button:hover {
   background-color: #0056b3;
 }
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 15px;
+    flex-direction: column; /* Change to column layout for smaller screens */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+  }
+
+  .navbar .links {
+    margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  .navbar a {
+    margin: 8px;
+  }
+
+  .content {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .nameofpage h1 {
+    font-size: 1.5rem;
+  }
+
+  .nameofpage h4 {
+    font-size: 1rem;
+  }
+
+  .catalogue1 {
+    flex-direction: column;
+  }
+
+  .par {
+    left: 0;
+    top: 0;
+    margin: 10px;
+  }
+
+  .best-sellers img {
+    width: 100%;
+  }
+
+  .about-content {
+    padding: 20px;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .contact-content {
+    padding: 20px;
+  }
+
+  .contact-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-content p {
+    font-size: 1rem;
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+  }
+
+  .signin-container,
+  .signup-container {
+    margin-top: 20px;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .signin-input,
+  .input-field {
+    width: 100%;
+  }
+
+  .signin-button,
+  .ok-button {
+    width: 100%;
+  }
+  .best-sellers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .best-sellers h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .best-sellers a {
+    margin: 0 5px;
+  }
+
+  .best-sellers img {
+    width: 150px;
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+  }
+  .search_box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search_box input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Add a custom style for the search icon (assuming it's a FontAwesome icon) */
+  .search_box .ffff::before {
+    content: '\f002'; /* Unicode for the search icon in FontAwesome */
+    font-family: 'FontAwesome'; /* Ensure the FontAwesome font is available */
+    color: #333; /* Adjust the color of the icon */
+    cursor: pointer;
+  }
+  
+  /* Adjust the overall layout of the navbar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(227, 206, 180);
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+}
+
+
 
 
 
