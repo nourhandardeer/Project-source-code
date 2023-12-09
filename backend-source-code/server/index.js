@@ -29,6 +29,7 @@ app.use(errorHandler);
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
+app.use('/upload', multerRoutes)
 
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
