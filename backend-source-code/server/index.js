@@ -1,8 +1,5 @@
 const express = require("express");
-const mongoose = require('mongoose');
- const User = require('./modules/userModule');
-const Product = require('./modules/productModule');
-const Order = require('./modules/orderModule'); 
+const mongoose = require('mongoose'); 
 const productsRouter = require('./routers/products');
 const categoriesRoutes= require('./routers/categories')
 const usersRoutes = require('./routers/users');
@@ -10,6 +7,7 @@ const ordersRoutes = require('./routers/order');
 const cartRoutes = require('./routers/cart');
 const multerRoutes = require('./routers/upload');
 const bcrypt = require('bcrypt');
+const authJwt=require('./helpers/jwt')
 const errorHandler = require('./errorHandler/Errors');
 const cors = require('cors');
 
@@ -20,16 +18,20 @@ app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(errorHandler);
-
+/* app.use(authJwt); */
 //routers
 //const api = process.env.API_URL;
 
 app.use('/products', productsRouter)
 app.use('/users', usersRoutes)
 app.use('/orders', ordersRoutes)
+<<<<<<< Updated upstream
 app.use('/categories', categoriesRoutes)
 app.use('/cart', cartRoutes)
 
+=======
+app.use('/categories', categoriesRoutes);
+>>>>>>> Stashed changes
 
 mongoose.set("strictQuery", false)
 mongoose
